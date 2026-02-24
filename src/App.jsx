@@ -11,7 +11,26 @@ function App() {
 
   return (
     <>
-      <Card />
+      <div className="flex justify-center flex-wrap gap-8 my-10 px-4">
+        {/* Tarjeta 1 (Izquierda) */}
+        <Card
+          image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop"
+          title="Desarrollo Frontend"
+          description="Domina HTML, CSS y JavaScript para construir mecánicas interactivas y dinámicas."
+          buttonText="Ver Curso"
+        />
+
+        {/* Tarjeta 2 (Centro - Original) */}
+        <Card />
+
+        {/* Tarjeta 3 (Derecha) */}
+        <Card
+          image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
+          title="Seguridad Web"
+          description="Protege tus aplicaciones contra vulnerabilidades comunes y mejora la confianza del usuario."
+          buttonText="Explorar"
+        />
+      </div>
       <div style={{ position: 'fixed', bottom: '20px', left: '20px' }}>
         <Button>Button 2</Button>
       </div>

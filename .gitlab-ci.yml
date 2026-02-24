@@ -1,0 +1,17 @@
+image: node:20-alpine # Imagen ligera de Node.js
+
+pages:
+  stage: deploy
+  cache:
+    paths:
+      - node_modules/ # Cache para acelerar futuras compilaciones
+  script:
+    - npm install    # Instala las dependencias (Tailwind, React, etc.)
+    - npm run build  # Ejecuta el build de Vite (genera la carpeta /dist)
+    - rm -rf public  # Elimina cualquier carpeta public existente para evitar conflictos
+    - mv dist public # GitLab Pages requiere que el contenido esté en /public
+  artifacts:
+    paths:
+      - public       # Carpeta que se mantendrá como sitio estático
+  only:
+    - main           # Se ejecuta solo al hacer push a la rama main

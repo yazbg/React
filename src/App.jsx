@@ -5,6 +5,7 @@ import './App.css'
 import Card from './components/Card/Card';
 import Button from './components/Button';
 import TailwindText from './components/Text/Text';
+import StaticComponent from './components/StaticComponent/StaticComponent.jsx/StaticComponent';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Button blue>Button 3</Button>
       </div>
       <TailwindText />
+      <StaticComponent />
     </>
   )
 }

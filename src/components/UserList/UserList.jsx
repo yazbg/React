@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./UserList.module.css";
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -16,12 +18,21 @@ const UserList = () => {
         return name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
     };
 
+    const handleUserClick = (userId) => {
+        navigate(`/user/${userId}`);
+    };
+
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Directorio de Usuarios</h1>
             <ul className={styles.userGrid}>
                 {users.map(user => (
-                    <li key={user.id} className={styles.userCard}>
+                    <li
+                        key={user.id}
+                        className={styles.userCard}
+                        onClick={() => handleUserClick(user.id)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <div className={styles.avatar}>
                             {getInitials(user.name)}
                         </div>

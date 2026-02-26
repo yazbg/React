@@ -1,0 +1,97 @@
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    color: #4f46e5;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.backButton:hover {
+    color: #3730a3;
+    text-decoration: underline;
+}
+
+.card {
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.name {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin: 0;
+    font-weight: 700;
+}
+
+.username {
+    font-size: 1.25rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.infoSection {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.infoSection:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.infoSection h2 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.infoSection p {
+    margin: 0.5rem 0;
+    color: #475569;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.catchPhrase {
+    font-style: italic;
+    color: #64748b !important;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #64748b;
+    margin-top: 4rem;
+}
+
+.error {
+    color: #ef4444;
+}

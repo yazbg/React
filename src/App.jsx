@@ -10,6 +10,8 @@ import StaticComponent from './components/StaticComponent/StaticComponent.jsx/St
 import Navbar from './components/Navbar/Navbar';
 import UserList from './components/UserList/UserList';
 import UserDetail from './components/UserDetail/UserDetail.jsx';
+import SearchPosts from './components/SearchPosts/SearchPosts';
+import Counter from './components/Counter/Counter';
 
 function App() {
 
@@ -54,6 +56,8 @@ function App() {
           } />
           <Route path="/user/:id" element={<UserDetail />} />
         </Routes>
+        <SearchPosts />
+        <Counter />
       </main>
     </div>
   )

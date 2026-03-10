@@ -11,6 +11,8 @@ import UserList from './components/UserList/UserList';
 import UserDetail from './components/UserDetail/UserDetail.jsx';
 import SearchPosts from './components/SearchPosts/SearchPosts';
 import Counter from './components/Counter/Counter';
+import CounterWithCustomHook from './components/Counter/CounterWithCustomHook/CounterWithCustomHook';
+import CounterWithReactMemo from './components/CounterWithReactMemo/CounterWithReactMemo';
 import { createContext, useContext, useState } from 'react'
 
 const ThemeContext = createContext(null);
@@ -56,6 +58,8 @@ function App() {
               <ThemeProvider>
                 <ThemeButton />
               </ThemeProvider>
+              <CounterWithCustomHook />
+              <CounterWithReactMemo />
               <div className="flex justify-center flex-wrap gap-8 my-10 px-4">
                 {/* Tarjeta 1 (Izquierda) */}
                 <Card

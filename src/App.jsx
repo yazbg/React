@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -12,6 +11,37 @@ import UserList from './components/UserList/UserList';
 import UserDetail from './components/UserDetail/UserDetail.jsx';
 import SearchPosts from './components/SearchPosts/SearchPosts';
 import Counter from './components/Counter/Counter';
+import { createContext, useContext, useState } from 'react'
+
+const ThemeContext = createContext(null);
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemeButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={toggleTheme}
+      style={{
+        backgroundColor: theme === 'light' ? 'white' : 'black',
+        color: theme === 'light' ? 'black' : 'white'
+      }}>
+      {theme === 'light' ? 'Dark ' : 'Light '}
+      Cambiar Tema
+    </button>
+  );
+}
 
 function App() {
 
@@ -23,6 +53,9 @@ function App() {
           <Route path="/" element={
             <>
               <TailwindText />
+              <ThemeProvider>
+                <ThemeButton />
+              </ThemeProvider>
               <div className="flex justify-center flex-wrap gap-8 my-10 px-4">
                 {/* Tarjeta 1 (Izquierda) */}
                 <Card

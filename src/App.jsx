@@ -85,12 +85,12 @@ function App() {
               <TailwindText />
               <StaticComponent />
               <UserList />
+              <SearchPosts />
+              <Counter />
             </>
           } />
           <Route path="/user/:id" element={<UserDetail />} />
         </Routes>
-        <SearchPosts />
-        <Counter />
       </main>
     </div>
   )
